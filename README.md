@@ -1,0 +1,1 @@
+# jogayjoga.group-resource
