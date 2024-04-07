@@ -26,13 +26,13 @@ public class GroupModel {
     @Column(name = "id_group")
     private String id;
 
-    @Column(name = "gp_name")
+    @Column(name = "tx_name")
     private String name;
 
-    @Column(name = "gp_description")
+    @Column(name = "tx_description")
     private String description;
 
-    @Column(name = "gp_qtd_members")
+    @Column(name = "tx_qtd_members")
     private Integer qtd_members;
 
     public GroupModel(Group o) {

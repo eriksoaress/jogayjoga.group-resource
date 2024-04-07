@@ -4,9 +4,9 @@ package jogayjoga.group;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 
 
 @RestController
@@ -34,24 +34,11 @@ public class GroupResource implements GroupController {
         
     }
 
-    @Override
-    public ResponseEntity<GroupOut> update(String id, GroupIn in) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
-    }
-
-    
-    @Override
-    public ResponseEntity<GroupOut> readall(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'readall'");
-    }
-
 
     @Override
     public ResponseEntity<GroupOut> read(String id) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'read'");
+        return ResponseEntity.ok(groupService.read(id));
     }
 
 
