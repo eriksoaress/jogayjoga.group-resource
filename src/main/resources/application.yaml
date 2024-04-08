@@ -11,11 +11,11 @@ spring:
     driver-class-name: org.postgresql.Driver
   flyway:
     baseline-on-migrate: true
-    schemas: group
+    schemas: sq_group
   jpa:
     properties:
       hibernate:
-        default_schema: group
+        default_schema: sq_group
 
 management:
   endpoints:
