@@ -1,4 +1,4 @@
-CREATE TABLE tb_group
+CREATE TABLE group_
 (
     id_group character varying(36) NOT NULL,
     tx_name character varying(256) NOT NULL,
