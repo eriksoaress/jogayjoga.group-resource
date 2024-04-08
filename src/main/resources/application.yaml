@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: jogayjoga-account
+    name: jogayjoga-group
   datasource:
     url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/jogayjoga}
     username: ${DATABASE_USERNAME:jogayjoga}
@@ -11,16 +11,16 @@ spring:
     driver-class-name: org.postgresql.Driver
   flyway:
     baseline-on-migrate: true
-    schemas: account
+    schemas: group
   jpa:
     properties:
       hibernate:
-        default_schema: account
+        default_schema: group
 
 management:
   endpoints:
     web:
-      base-path: /accounts/actuator
+      base-path: /groups/actuator
       exposure:
         include: [ 'prometheus' ]
 
