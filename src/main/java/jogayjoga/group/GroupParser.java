@@ -6,6 +6,7 @@ public class GroupParser {
             .name(in.name())
             .description(in.description())
             .qtdMembers(in.qtdMembers())
+            .sportId(in.sportId())
             .build();
     }
 

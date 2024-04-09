@@ -35,11 +35,15 @@ public class GroupModel {
     @Column(name = "tx_qtd_members")
     private Integer qtd_members;
 
+    @Column(name = "id_sport")
+    private String sportId;
+
     public GroupModel(Group o) {
         this.id = o.id();
         this.name = o.name();
         this.description = o.description();
         this.qtd_members = o.qtdMembers();
+        this.sportId = o.sportId();
     }
     
     public Group to() {
@@ -47,7 +51,8 @@ public class GroupModel {
             .id(id)
             .name(name)
             .description(description)
-            .qtdMembers(qtd_members);
+            .qtdMembers(qtd_members)
+            .sportId(sportId);
     }
     
 }

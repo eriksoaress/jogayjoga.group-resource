@@ -9,6 +9,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
 
+
 @RestController
 public class GroupResource implements GroupController {
     
@@ -33,6 +34,12 @@ public class GroupResource implements GroupController {
         }
         
     }
+
+    @Override
+    public ResponseEntity<GroupSportOut> getFullInfo(String id) {
+        return ResponseEntity.ok(groupService.getFullInfo(id));
+    }
+    
 
 
     @Override
