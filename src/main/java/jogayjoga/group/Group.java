@@ -16,5 +16,6 @@ public class Group {
     private String name;
     private String description;
     private Integer qtdMembers;
+    private String sportId;
     
 }

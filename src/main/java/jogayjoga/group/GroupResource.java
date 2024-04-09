@@ -10,6 +10,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 
+
 @RestController
 @Tag(name = "Group", description = "")
 public class GroupResource implements GroupController {
@@ -35,6 +36,12 @@ public class GroupResource implements GroupController {
         }
         
     }
+
+    @Override
+    public ResponseEntity<GroupSportOut> getFullInfo(String id) {
+        return ResponseEntity.ok(groupService.getFullInfo(id));
+    }
+    
 
 
     @Override
