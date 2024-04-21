@@ -4,7 +4,7 @@ pipeline {
 
         stage('Build Interface') {
             steps {
-                build job: 'jogayjoga.group', wait: true
+                build job: 'jogayjoga-group', wait: true
             }
         }
 
@@ -17,7 +17,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    account = docker.build("jogayjoga/group:${env.BUILD_ID}", "-f Dockerfile .")
+                    group = docker.build("eriksoaress/group:${env.BUILD_ID}", "-f Dockerfile .")
                 }
             }
         }
@@ -26,8 +26,8 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credential') {
-                        account.push("${env.BUILD_ID}")
-                        account.push("latest")
+                        group.push("${env.BUILD_ID}")
+                        group.push("latest")
                     }
                 }
             }
