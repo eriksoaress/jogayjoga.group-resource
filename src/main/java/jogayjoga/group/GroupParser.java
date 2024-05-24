@@ -1,5 +1,7 @@
 package jogayjoga.group;
 
+
+
 public class GroupParser {
     public static Group to(GroupIn in ){
         return Group.builder()
@@ -18,4 +20,5 @@ public class GroupParser {
             .qtdMembers(in.qtdMembers())
             .build();
     }
+
 }

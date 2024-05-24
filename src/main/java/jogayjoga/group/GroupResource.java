@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import java.util.List;
+
 
 
 
@@ -50,5 +52,9 @@ public class GroupResource implements GroupController {
         return ResponseEntity.ok(groupService.read(id));
     }
 
+    @Override
+    public ResponseEntity<List<GroupOut>> readall() {
+        return ResponseEntity.ok(groupService.readAll());
+    }
 
 }   
