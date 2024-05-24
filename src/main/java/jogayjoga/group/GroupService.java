@@ -1,6 +1,8 @@
 package jogayjoga.group;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import jogayjoga.sport.SportController;
 import jogayjoga.sport.SportOut;
@@ -45,6 +47,7 @@ public class GroupService {
             
     }
 
+    @Cacheable("group")
     public GroupOut read(@NonNull String id) {
         return GroupParser.to(groupRepository.findById(id).map(model -> model.to()).orElse(null));
     }
@@ -69,6 +72,7 @@ public class GroupService {
 
         return groupOuts;
     }
+
     
 
 }

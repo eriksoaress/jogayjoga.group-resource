@@ -57,4 +57,5 @@ public class GroupResource implements GroupController {
         return ResponseEntity.ok(groupService.readAll());
     }
 
+
 }   

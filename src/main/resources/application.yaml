@@ -22,6 +22,10 @@ spring:
     properties:
       hibernate:
         default_schema: group_
+  redis:
+    host: my-redis
+    port: 6379
+
 
 management:
   endpoints:
