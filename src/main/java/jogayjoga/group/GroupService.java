@@ -47,8 +47,9 @@ public class GroupService {
             
     }
 
-    @Cacheable("group")
+    @Cacheable(key = "#id", value = "group", unless = "#result == null")
     public GroupOut read(@NonNull String id) {
+        System.out.println("Reading group id: " + id);
         return GroupParser.to(groupRepository.findById(id).map(model -> model.to()).orElse(null));
     }
 
