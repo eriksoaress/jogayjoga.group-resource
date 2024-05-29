@@ -57,5 +57,16 @@ public class GroupResource implements GroupController {
         return ResponseEntity.ok(groupService.readAll());
     }
 
+    @Override
+    public ResponseEntity<GroupOut> update(String id, GroupIn in) {
+        return ResponseEntity.ok(groupService.update(id, in));
+    }
+
+    @Override
+    public ResponseEntity<?> delete(String id) {
+        groupService.delete(id);
+        return ResponseEntity.ok().build();
+    }
+
 
 }   

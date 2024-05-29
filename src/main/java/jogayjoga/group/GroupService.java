@@ -1,7 +1,6 @@
 package jogayjoga.group;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import jogayjoga.sport.SportController;
@@ -72,6 +71,26 @@ public class GroupService {
         }
 
         return groupOuts;
+    }
+
+    public GroupOut update(String id, GroupIn in) {
+        Group group = groupRepository.findById(id).map(GroupModel::to).orElse(null);
+        if (group == null) {
+            // Handle the case when the group is not found
+            throw new RuntimeException("Group not found");
+        }
+        group.name(in.name()); // Fluent setter
+        group.description(in.description());
+        group.qtdMembers(in.qtdMembers());
+        group.sportId(in.sportId());
+        GroupModel updatedModel = groupRepository.save(new GroupModel(group));
+
+        // Convert the updated Group object to a GroupOut object and return it
+        return GroupParser.to(updatedModel.to());
+    }
+
+    public void delete(String id) {
+        groupRepository.deleteById(id);
     }
 
     
